@@ -146,12 +146,12 @@ h2::selection {
 
 /* Project 3 */
 .card:nth-child(3) {
-  background: url(../assets/project/il_calcio_come_specchio_della_società.jpg) center center/cover;
+  background: url(../assets/project/mariecurie.jpg) center center/cover;
 }
 
 /* Project 4 */
 .card:nth-child(4) {
-  background: url(../assets/project/project-four.png) center center/cover;
+  background: url(../assets/project/il_calcio_come_specchio_della_società.jpg) center center/cover;
 }
 
 /* Project 5 */
