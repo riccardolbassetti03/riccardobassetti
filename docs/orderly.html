@@ -30,7 +30,6 @@
     }
     
     .project-details {
-      /* MODIFICA: Aumentato padding-top per fare spazio al bottone fisso in alto */
       padding: 8rem 0 4rem 0; 
       min-height: 80vh;
     }
@@ -74,10 +73,10 @@
       border: none;
     }
     
-    /* --- MODIFICA: Bottone Fluttuante in ALTO --- */
+    /* Bottone Fluttuante in ALTO */
     .action-button-container {
       position: fixed;
-      top: 100px;               /* Posizionato in alto, sotto la navbar (circa 80px) */
+      top: 100px;
       left: 50%;
       transform: translateX(-50%);
       z-index: 1000;
@@ -87,7 +86,6 @@
 
     .action-button-container .btn {
       box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
-      /* Opzionale: un po' di trasparenza o sfondo solido per staccarlo */
       background-color: var(--primary-color);
       color: #000000;
     }
@@ -124,18 +122,22 @@
   
   <div class="action-button-container">
     <a href="https://riccardolbassetti03.github.io/orderly" class="btn btn-primary" target="_blank">
-      Visualizza Progetto <i class="fas fa-external-link-alt"></i>
+      Visualizza Progetto (in html) <i class="fas fa-external-link-alt"></i>
     </a>
   </div>
-<div class="action-button-container">
-    <a href="#" class="btn btn-primary" target="_blank">
-      Progetto originale (.vue) <i class="fas fa-external-link-alt"></i>
-    </a>
-  </div>
+
   <section class="project-details container">
     
     <div class="project-description">
-      <h1>Nota: il sito originale è realizzato in formato .vue con l'utilizzo di firebase per prodotti, immagini e login</h1>
+      <h3 style="color: red; font-size: 1.2rem; font-weight: bold; margin-bottom: 5px;">
+        Nota: il sito originale è realizzato in formato .vue con l'utilizzo di firebase per prodotti, immagini e login
+      </h3>
+      
+      <a href="https://github.com/riccardolbassetti03/orderly" target="_blank" 
+         style="color: red; text-decoration: underline; display: block; margin-bottom: 2rem; font-weight: bold;">
+         visualizza progetto originale (.vue)
+      </a>
+
       <h1>Orderly x Ephemeral</h1>
       <p>
         Orderly nasce da unʼesigenza concreta: supportare piccoli brand di abbigliamento,
