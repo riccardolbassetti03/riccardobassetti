@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EasyStay</title>
+  
+  <link rel="icon" type="image/png" href="src/assets/logo.png">
+  <link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+  integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+  crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="src/css/style.css" />
+  <link rel="stylesheet" href="src/css/utilities.css" />
+  
+  <style>
+    body {
+      background-color: var(--bg-primary); 
+    }
+    
+    .navbar-project {
+      background-color: var(--bg-primary);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .project-details {
+      /* MODIFICA: Aumentato padding-top per fare spazio al bottone fisso in alto */
+      padding: 8rem 0 4rem 0; 
+      min-height: 80vh;
+    }
+    
+    .project-description {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    
+    .project-description h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+    }
+    
+    .project-description p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--text-color);
+    }
+    
+    .pdf-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .pdf-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* --- MODIFICA: Bottone Fluttuante in ALTO --- */
+    .action-button-container {
+      position: fixed;
+      top: 100px;               /* Posizionato in alto, sotto la navbar (circa 80px) */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      text-align: center;
+      width: auto;
+    }
+    
+    .action-button-container .btn {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+      /* Opzionale: un po' di trasparenza o sfondo solido per staccarlo */
+      background-color: var(--primary-color);
+      color: #000000;
+      border: 2px solid #000000; /* Bordo bianco per risaltare */
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar navbar-project">
+    <div class="container">
+      <h1 id="logo">
+        <a href="index.html"><img src="src/assets/logo.png" alt="Your Logo"/></a>
+      </h1>
+      <ul class="nav-menu">
+        <li><a class="nav-link" href="index.html#projects">PROGETTI</a></li>
+        <li><a class="nav-link" href="index.html#footer">CONTATTI</a></li>
+        <li>
+          <a class="nav-link btn btn-primary" href="https://drive.google.com/file/d/1AZZuRDtQbfVq_K77v7v3TTaOTb0Z8zk8/view?usp=sharing">Il mio CV <i class="fas fa-arrow-right"></i></a>
+        </li>
+        <div class="theme-switch">
+          <input type="checkbox" id="switch" />
+          <label class="toggle-icons" for="switch">
+            <img class="moon" src="src/assets/moon.svg" />
+            <img class="sun" src="src/assets/sun.svg" />
+          </label>
+        </div>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="action-button-container">
+    <a href="https://www.figma.com/design/dUJNSAbBooCty8woGe9NiP/EasyStay-by-Riccardo-Bassetti?node-id=13-68&t=5tUvXePxHUPgsErK-1" class="btn btn-primary" target="_blank">
+      Visualizza Progetto <i class="fas fa-external-link-alt"></i>
+    </a>
+  </div>
+  
+  <section class="project-details container">
+    
+    <div class="project-description">
+      <h1>EasyStay</h1>
+      <p>
+        Al termine del corso di Progettazione di Interfacce Grafiche presente nel mio corso di studi universitario, ho lavorato per alcuni mesi al progetto. Mi
+        sono concentrato sulla realizzazione di un sistema per la prenotazione di camere di alberghi che
+        risultasse non solo efficiente ma anche piacevole e facile da utilizzare per l’utente. Questo tema penso
+        possa essere utile per molte persone, perché a tutti può capitare almeno una volta all'anno di viaggiare,
+        che sia per lavoro o per piacere, e dover cercare un posto in cui dormire.
+        
+        <br>
+        <br>
+        Per lo sviluppo ho adottato ed eseguito ogni step del design thinking.
+        <br>
+        <br>
+        Ho iniziato individuando i problemi che un utente può affrontare durante la prenotazione, come lunghe
+        attese per avere una risposta sulla disponibilità delle camere, informazioni poco chiare e l’impossibilità di
+        confrontare varie opzioni di stanze.
+        <br>
+        <br>
+        Successivamente ho trasformato le nostre idee in un’interfaccia utente, prestando attenzione a ogni
+        dettaglio visivo e interattivo.
+        <br>
+        <br>
+        Il risultato finale è un’applicazione mobile, chiamata EasyStay, che ha come obiettivo quello di andare
+        incontro ai bisogni e alle esigenze degli utenti.
+      </p>
+    </div>
+    
+    <div class="pdf-container">
+      <iframe 
+      src="https://drive.google.com/file/d/1ed3bXl9Nc2h3ogRHtcXA3GsTUwev8TEd/preview" 
+      allow="autoplay">
+    </iframe>
+  </div>
+  
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <a href="mailto:riccardobassetti03@gmail.com">riccardobassetti03@gmail.com</a>
+    <div class="social">
+      <a href="https://www.instagram.com/riccardo_bassetti" target="_blank"><img src="src/assets/instagram-icon.png" alt="Instagram"/></a>
+      <a href="#" target="_blank"><img src="src/assets/linkedin-icon.svg" alt="Linkedin"/></a>
+      <a href="https://github.com/riccardolbassetti03" target="_blank"><img src="src/assets/github-icon.svg" alt="GitHub" /></a>
+    </div>
+  </div>
+</footer>
+
+<script src="src/js/script.js"></script>
+</body>
+</html>
