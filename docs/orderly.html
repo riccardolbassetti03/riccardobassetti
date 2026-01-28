@@ -1,161 +1,191 @@
 <!DOCTYPE html>
 <html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dettaglio Progetto - Riccardo Bassetti</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orderly x Ephemeral</title>
+  
+  <link rel="icon" type="image/png" href="src/assets/logo.png">
+  <link
+  rel="stylesheet"
+  href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+  integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+  crossorigin="anonymous"
+  />
+  <link rel="stylesheet" href="src/css/style.css" />
+  <link rel="stylesheet" href="src/css/utilities.css" />
+  
+  <style>
+    body {
+      background-color: var(--bg-primary); 
+    }
     
-    <link rel="icon" type="image/png" href="src/assets/logo.png">
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="src/css/style.css" />
-    <link rel="stylesheet" href="src/css/utilities.css" />
+    .navbar-project {
+      background-color: var(--bg-primary);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
     
-    <style>
-        /* Stili specifici per la pagina progetto */
-        body {
-            /* Imposta uno sfondo base se necessario, altrimenti eredita da style.css */
-            background-color: var(--bg-primary); 
-        }
-        
-        /* Adattamento Navbar per pagina senza Hero a schermo intero */
-        .navbar-project {
-            background-color: var(--bg-primary);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .project-details {
-            padding: 4rem 0;
-            min-height: 80vh; /* Assicura che il footer stia in basso */
-        }
-
-        .project-description {
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-
-        .project-description h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-color);
-        }
-
-        .project-description p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            color: var(--text-color);
-        }
-
-        .pdf-container {
-            position: relative;
-            width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; /* Ratio 16:9 */
-            margin-bottom: 3rem;
-            box-shadow: var(--shadow);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .pdf-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .action-button-container {
-            text-align: center;
-            margin-top: 2rem;
-        }
-    </style>
-  </head>
-  <body>
+    .project-details {
+      /* MODIFICA: Aumentato padding-top per fare spazio al bottone fisso in alto */
+      padding: 8rem 0 4rem 0; 
+      min-height: 80vh;
+    }
     
-    <nav class="navbar navbar-project">
-        <div class="container">
-          <h1 id="logo">
-            <a href="index.html"><img src="src/assets/logo.png" alt="Your Logo"/></a>
-          </h1>
-          <ul class="nav-menu">
-            <li><a class="nav-link" href="index.html#projects">PROGETTI</a></li>
-            <li><a class="nav-link" href="index.html#footer">CONTATTI</a></li>
-            <li>
-              <a class="nav-link btn btn-primary" href="https://drive.google.com/file/d/1AZZuRDtQbfVq_K77v7v3TTaOTb0Z8zk8/view?usp=sharing">Il mio CV <i class="fas fa-arrow-right"></i></a>
-            </li>
-            <div class="theme-switch">
-              <input type="checkbox" id="switch" />
-              <label class="toggle-icons" for="switch">
-                <img class="moon" src="src/assets/moon.svg" />
-                <img class="sun" src="src/assets/sun.svg" />
-              </label>
-            </div>
-          </ul>
-          <div class="hamburger">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-          </div>
-        </div>
-    </nav>
+    .project-description {
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    
+    .project-description h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+    }
+    
+    .project-description p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+      color: var(--text-color);
+    }
+    
+    .pdf-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    
+    .pdf-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* --- MODIFICA: Bottone Fluttuante in ALTO --- */
+    .action-button-container {
+      position: fixed;
+      top: 100px;               /* Posizionato in alto, sotto la navbar (circa 80px) */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      text-align: center;
+      width: auto;
+    }
 
-    <section class="project-details container">
-        
-        <div class="project-description">
-            <h1>Titolo del Tuo Progetto</h1>
-            <p>
-                Scrivi qui una breve descrizione del progetto. Spiega le tecnologie utilizzate, 
-                gli obiettivi raggiunti e il tuo ruolo nello sviluppo. Questo testo serve a dare contesto 
-                al visitatore prima che visualizzi il documento o visiti il link finale.
-            </p>
+    .action-button-container .btn {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+      /* Opzionale: un po' di trasparenza o sfondo solido per staccarlo */
+      background-color: var(--primary-color);
+      color: #000000;
+      border: 2px solid #000000; /* Bordo bianco per risaltare */
+    }
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar navbar-project">
+    <div class="container">
+      <h1 id="logo">
+        <a href="index.html"><img src="src/assets/logo.png" alt="Your Logo"/></a>
+      </h1>
+      <ul class="nav-menu">
+        <li><a class="nav-link" href="index.html#projects">PROGETTI</a></li>
+        <li><a class="nav-link" href="index.html#footer">CONTATTI</a></li>
+        <li>
+          <a class="nav-link btn btn-primary" href="https://drive.google.com/file/d/1AZZuRDtQbfVq_K77v7v3TTaOTb0Z8zk8/view?usp=sharing">Il mio CV <i class="fas fa-arrow-right"></i></a>
+        </li>
+        <div class="theme-switch">
+          <input type="checkbox" id="switch" />
+          <label class="toggle-icons" for="switch">
+            <img class="moon" src="src/assets/moon.svg" />
+            <img class="sun" src="src/assets/sun.svg" />
+          </label>
         </div>
-
-        <div class="pdf-container">
-            <iframe 
-                src="https://drive.google.com/file/d/1eNZFyXvMhwF6hM6HHZALuCaDGqlm33nA/preview" 
-                allow="autoplay">
-            </iframe>
-        </div>
-
-        <div class="action-button-container">
-            <a href="INSERISCI_QUI_IL_LINK_DEL_PROGETTO" class="btn btn-primary" target="_blank">
-                Visualizza Progetto <i class="fas fa-external-link-alt"></i>
-            </a>
-        </div>
-
-    </section>
-
-    <footer id="footer">
-      <div class="container">
-        <a href="mailto:riccardobassetti03@gmail.com">riccardobassetti03@gmail.com</a>
-        <div class="social">
-          <a href="#" target="_blank"><img src="./src/assets/facebook-icon.svg" alt="Facebook"/></a>
-          <a href="#" target="_blank"><img src="./src/assets/twitter-icon.svg" alt="Twitter" /></a>
-          <a href="#" target="_blank"><img src="./src/assets/linkedin-icon.svg" alt="Linkedin"/></a>
-          <a href="#" target="_blank"><img src="./src/assets/github-icon.svg" alt="GitHub" /></a>
-          <a href="#" target="_blank"><img src="src/assets/hashnode-icon.svg" alt="Hashnode"/></a>
-        </div>
-        <div class="attribution">
-          <a href="https://github.com/CommunityPro/portfolio-html" target="_blank" rel="noopener noreferrer">
-            <img src="https://user-images.githubusercontent.com/62628408/157202263-9174da24-b19a-4017-9b7c-a1d26ae8f014.svg" alt="attribution" width="150px"/>
-          </a>
-        </div>
-        <p>Copyright &copy; Communitypro <span id="datee"></span>, All rights reserved</p>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
       </div>
-    </footer>
+    </div>
+  </nav>
+  
+  <div class="action-button-container">
+    <a href="https://riccardolbassetti03.github.io/orderly" class="btn btn-primary" target="_blank">
+      Visualizza Progetto <i class="fas fa-external-link-alt"></i>
+    </a>
+  </div>
+
+  <section class="project-details container">
     
-    <script src="src/js/script.js"></script>
-  </body>
+    <div class="project-description">
+      <h1>Orderly x Ephemeral</h1>
+      <p>
+        Orderly nasce da unʼesigenza concreta: supportare piccoli brand di abbigliamento,
+        spesso gestiti da una sola persona, nel rendere più efficiente la gestione degli
+        ordini. Lʼidea iniziale prende forma in collaborazione con Ephemeral®, un brand
+        emergente che si è reso disponibile a condividere il proprio processo lavorativo e
+        le proprie difficoltà operative.
+        
+        <br>
+        <br>
+        Proprio da qui sono emerse tutte le sfide che abbiamo poi voluto affrontare con
+        Orderly. Man mano che il numero di richieste cresceva, diventava sempre più
+        difficile tenere traccia degli ordini, preparare le spedizioni, comunicare con i
+        fornitori e capire quante magliette fossero effettivamente disponibili. Ogni attività,
+        dalla più semplice alla più logistica, richiedeva tempo, attenzione e unʼenorme
+        quantità di lavoro manuale.
+        <br>
+        <br>
+        Abbiamo quindi costruito Orderly intorno a Ephemeral, seguendo da vicino ogni
+        passaggio del flusso di lavoro reale del brand: dalla preparazione degli ordini, alla
+        comunicazione con i fornitori, fino alla gestione dellʼinventario e alle spedizioni. Il
+        sito è stato sviluppato ascoltando i bisogni, osservando gli errori, capendo cosa
+        poteva essere automatizzato e cosa invece andava reso più semplice.
+      </p>
+    </div>
+    
+    <div class="pdf-container">
+      <iframe 
+      src="https://drive.google.com/file/d/1ay5J_pKDRVas-qx_q82yy-kFqUaha_r4/preview" 
+      allow="autoplay">
+    </iframe>
+  </div>
+  
+</section>
+
+<footer id="footer">
+  <div class="container">
+    <a href="mailto:riccardobassetti03@gmail.com">riccardobassetti03@gmail.com</a>
+    <div class="social">
+      <a href="#" target="_blank"><img src="./src/assets/facebook-icon.svg" alt="Facebook"/></a>
+      <a href="#" target="_blank"><img src="./src/assets/twitter-icon.svg" alt="Twitter" /></a>
+      <a href="#" target="_blank"><img src="./src/assets/linkedin-icon.svg" alt="Linkedin"/></a>
+      <a href="#" target="_blank"><img src="./src/assets/github-icon.svg" alt="GitHub" /></a>
+      <a href="#" target="_blank"><img src="src/assets/hashnode-icon.svg" alt="Hashnode"/></a>
+    </div>
+    <div class="attribution">
+      <a href="https://github.com/CommunityPro/portfolio-html" target="_blank" rel="noopener noreferrer">
+        <img src="https://user-images.githubusercontent.com/62628408/157202263-9174da24-b19a-4017-9b7c-a1d26ae8f014.svg" alt="attribution" width="150px"/>
+      </a>
+    </div>
+    <p>Copyright &copy; Communitypro <span id="datee"></span>, All rights reserved</p>
+  </div>
+</footer>
+
+<script src="src/js/script.js"></script>
+</body>
 </html>
